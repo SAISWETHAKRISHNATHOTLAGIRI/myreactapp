@@ -46,12 +46,31 @@ render(){
 }
 }
 export default MyFirstApp;*/
+//we can have only one root parent and child is the developers wish
 import "./App.css"
+import InputElement from "./inputElement";
+import HeadingElement from "./HeadingElement";
+//import HeadElementTwo from "./HeadElementTwo"
+//root function
 function MyFirstApp(){
+  //parent function1
+  function localscope(){
+    const ex=10;
+    //child function
+    function childfunc(){}
+  }localscope();
+  function localscope2(){
+    function child(){}
+  }
+  
 return (
   <div className="my-app">
-    <input type="text" placeholder="enter your name"/><br/>
-    <input type="password" placeholder="enter password"/><br/>
+     {/* <input type="text" placeholder="enter your name"/><br/>
+    <input type="password" placeholder="enter password"/><br/>  */}
+    <HeadingElement title="Login form"/>
+    <InputElement type={"text"} placeholder="enter your name"/><br/>
+    <InputElement type={"password"} placeholder="enter your pswd"/><br/>
+    <InputElement type={"email"} placeholder="enter your email"/><br/>
     <button type="submit" style={{background:"red", fontSize:"40px",textAlign:"center",color:"white"}}>submit</button>
   </div>
 );
